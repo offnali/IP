@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+    <link rel="stylesheet" href="static/register.css">
+	<script src="static/register.js"></script>
+
+    <div class="register-box">
+        <h2>Register</h2>
+        <form method="POST" action="{{ url_for('views.register') }}" class="register-form">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <img src="static/images/eye-close.png" class="img-eye" id="eyeicon">
+            <label for="confirmed_password">Confirm Password:</label>
+            <input type="password" id="confirmed_password" name="confirm_password">
+
+            <div class="submit-container">
+                <input type="submit" value="Register">
+            </div>
+            <div class="sign-up-btn">Already have an account? <a href="/login">Login here</a></div>
+
+
+        </form>
+    </div>
+{% endblock %}

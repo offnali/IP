@@ -1,0 +1,112 @@
+* {box-sizing: border-box}
+
+body 
+{
+  font-family: Arial;
+
+  background-image: url(Images/Background.webp);
+  background-size: cover;
+}
+    /*-------------------- navbar grading --------------------*/
+ 
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: transparent;
+      overflow: auto;
+      padding-top: 0px;
+    }
+    
+    .navbar a {
+      float: left;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 28px;
+      width: 14.25%;
+      text-align: center;
+    }
+    
+    .navbar .Clickable:hover {
+      background-color: #000;
+      opacity: 70%;
+    }
+    
+    .navbar a.active {
+      background-color: #04AA6D;
+    }
+    
+    .navbar .NonClickable {
+      color: #efceb1;
+    }
+    
+    @media screen and (max-width: 500px) {
+      .navbar a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+    
+    .navbar .Clickable:last-child,
+    .navbar .NonClickable:last-child {
+      margin-left: auto;
+    }
+
+    /*-------------------- navbar grading --------------------*/
+
+
+    /*-------------------- flash messages--------------------*/
+
+
+.flash-message {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.flash-message.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.flash-message.error {
+  background-color: #C86161;
+  color: #fff;
+}
+
+.flash-message.warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.flash-message.info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+    /*-------------------- flash messages--------------------*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
