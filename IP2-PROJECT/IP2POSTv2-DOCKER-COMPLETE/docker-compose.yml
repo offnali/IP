@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  web: 
+    build: .
+    ports: 
+      - "5000:5000"
+    depends_on: 
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: hakuna
+      MYSQL_ROOT_PASSWORD: hakunamatata
+      DB_NAME: ip2post
+      CLAMAV_HOST: clamav
+      CLAMAV_PORT: 3310
+
+  db: 
+    image: mysql:8.0 
+    ports: 
+      - "3306:3306"
+    environment: 
+      MYSQL_DATABASE: ip2post
+      MYSQL_ROOT_PASSWORD: nali
+    volumes: # 
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+  
+  clamav:
+    image: clamav/clamav:latest
+    restart: always
+    ports:
+      - "3310:3310"
+
+
+volumes: 
+  db-data:
+
+

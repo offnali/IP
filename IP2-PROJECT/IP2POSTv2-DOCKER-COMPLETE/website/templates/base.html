@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="navbar">
+            <a class="Clickable" href="/">Home</a> 
+            <a class="Clickable" href="/">Bestseller</a> 
+            <a class="Clickable" href="/">Sieraden</a> 
+            <a class="Clickable" href="/">Over ons</a>
+            <a class="Clickable" href="/uploadpage">Upload</a>
+            {% if session['username-logpage'] %}
+            <a class="Clickable" href={{ url_for('views.logout') }}>Logout</a>
+            {% else %}
+            <a class="Clickable" href={{ url_for('views.login') }}>Login</a>
+            {% endif %}
+        </div> 
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

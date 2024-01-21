@@ -1,0 +1,7 @@
+Flask
+mysql-connector-python
+requests
+flask-bcrypt
+apscheduler
+python-magic
+clamd
